@@ -24,7 +24,7 @@ const Index = () => {
             تصميم واجهات مستخدم احترافية
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            أصمم واجهات مستخدم جذابة وسهلة الاستخدام تحول تطبيقاتك ومواقعك إلى تجارب لا تُنسى
+            أصمم صفحات جذابة وسهلة الاستخدام تحول أفكارك إلى تجارب بصرية لا تُنسى
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
             ابدأ مشروعك الآن
@@ -97,7 +97,7 @@ const Index = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            لماذا تحتاج إلى واجهة مستخدم احترافية؟
+            لماذا تحتاج إلى تصميم صفحات احترافي؟
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -193,10 +193,10 @@ const Index = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            جاهز لتصميم واجهة مستخدم مميزة؟
+            جاهز لتصميم صفحتك؟
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            دعني أساعدك في تصميم واجهة مستخدم احترافية تعكس هوية علامتك التجارية وتسعد مستخدميك
+            دعني أساعدك في تصميم صفحة احترافية تعكس هوية علامتك التجارية وتسعد مستخدميك
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
             تواصل معي الآن
@@ -207,7 +207,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 bg-muted">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2025 تصميم واجهات المستخدم UI/UX. جميع الحقوق محفوظة.</p>
+          <p>© 2025 تصميم صفحات احترافية. جميع الحقوق محفوظة.</p>
         </div>
       </footer>
     </div>
