@@ -21,10 +21,10 @@ const Index = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            تصميم صفحات ويب احترافية
+            تصميم واجهات مستخدم احترافية
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            نحول أفكارك إلى مواقع إلكترونية عصرية وجذابة تساعدك على النجاح في عالم الإنترنت
+            أصمم واجهات مستخدم جذابة وسهلة الاستخدام تحول تطبيقاتك ومواقعك إلى تجارب لا تُنسى
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
             ابدأ مشروعك الآن
@@ -32,68 +32,74 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Specialty Section */}
       <section className="py-20 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">خدماتنا</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">تخصصي</h2>
           <p className="text-center text-muted-foreground mb-16 text-lg">
-            نقدم حلول تصميم ويب متكاملة لجميع احتياجاتك
+            تصميم واجهات مستخدم (UI/UX) احترافية ومبتكرة
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <img 
-                  src={responsiveDesign} 
-                  alt="تصميم متجاوب" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <CardTitle className="text-2xl">تصميم متجاوب</CardTitle>
-                <CardDescription className="text-base">
-                  مواقع تعمل بشكل مثالي على جميع الأجهزة والشاشات
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  نضمن أن يبدو موقعك رائعاً على الحواسيب والأجهزة اللوحية والهواتف المحمولة
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
+          <div className="max-w-4xl mx-auto mb-16">
+            <Card className="hover:shadow-xl transition-shadow">
               <CardHeader>
                 <img 
                   src={uiuxDesign} 
                   alt="تصميم واجهات المستخدم" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
+                  className="w-full h-64 object-cover rounded-lg mb-6"
                 />
-                <CardTitle className="text-2xl">UI/UX تصميم</CardTitle>
-                <CardDescription className="text-base">
-                  واجهات مستخدم جذابة وسهلة الاستخدام
+                <CardTitle className="text-3xl mb-2">تصميم واجهات مستخدم UI/UX</CardTitle>
+                <CardDescription className="text-lg">
+                  أحول أفكارك إلى تصاميم بصرية جميلة وسهلة الاستخدام
                 </CardDescription>
               </CardHeader>
               <CardContent>
+                <p className="text-muted-foreground text-lg mb-6">
+                  أركز على خلق تجارب مستخدم استثنائية من خلال تصاميم نظيفة وحديثة تجمع بين الجمال والوظائف العملية. كل تصميم يُصنع بعناية فائقة لضمان تجربة سلسة وممتعة للمستخدمين.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card className="text-center p-6">
+              <CardHeader>
+                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <span className="text-3xl">🎨</span>
+                </div>
+                <CardTitle className="text-xl">تصميم بصري</CardTitle>
+              </CardHeader>
+              <CardContent>
                 <p className="text-muted-foreground">
-                  نصمم تجربة مستخدم استثنائية تجعل زوار موقعك يعودون مرة أخرى
+                  تصاميم عصرية وجذابة تعكس هوية علامتك التجارية
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="text-center p-6">
               <CardHeader>
-                <img 
-                  src={webDevelopment} 
-                  alt="تطوير الويب" 
-                  className="w-full h-48 object-cover rounded-lg mb-4"
-                />
-                <CardTitle className="text-2xl">تطوير ويب متقدم</CardTitle>
-                <CardDescription className="text-base">
-                  حلول برمجية قوية وآمنة لموقعك
-                </CardDescription>
+                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <span className="text-3xl">📱</span>
+                </div>
+                <CardTitle className="text-xl">تصميم متجاوب</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  نستخدم أحدث التقنيات لبناء مواقع سريعة وآمنة وقابلة للتوسع
+                  واجهات تعمل بشكل مثالي على جميع الأجهزة والشاشات
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center p-6">
+              <CardHeader>
+                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <span className="text-3xl">✨</span>
+                </div>
+                <CardTitle className="text-xl">تجربة مستخدم</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  تصاميم سهلة الاستخدام وواضحة تسعد المستخدمين
                 </p>
               </CardContent>
             </Card>
@@ -201,13 +207,13 @@ const Index = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            جاهز لبناء موقعك الإلكتروني؟
+            جاهز لتصميم واجهة مستخدم مميزة؟
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            دعنا نساعدك في إنشاء موقع ويب احترافي يعكس هوية علامتك التجارية ويحقق أهدافك
+            دعني أساعدك في تصميم واجهة مستخدم احترافية تعكس هوية علامتك التجارية وتسعد مستخدميك
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-            تواصل معنا الآن
+            تواصل معي الآن
           </Button>
         </div>
       </section>
@@ -215,7 +221,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 bg-muted">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>© 2025 خدمات تصميم الويب. جميع الحقوق محفوظة.</p>
+          <p>© 2025 تصميم واجهات المستخدم UI/UX. جميع الحقوق محفوظة.</p>
         </div>
       </footer>
     </div>
