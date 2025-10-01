@@ -61,31 +61,17 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="text-center p-6">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <span className="text-3xl">🎨</span>
                 </div>
-                <CardTitle className="text-xl">تصميم بصري</CardTitle>
+                <CardTitle className="text-xl">تصميم بصري احترافي</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  تصاميم عصرية وجذابة تعكس هوية علامتك التجارية
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6">
-              <CardHeader>
-                <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <span className="text-3xl">📱</span>
-                </div>
-                <CardTitle className="text-xl">تصميم متجاوب</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  واجهات تعمل بشكل مثالي على جميع الأجهزة والشاشات
+                  تصاميم عصرية وجذابة تعكس هوية علامتك التجارية بشكل مميز ومحترف
                 </p>
               </CardContent>
             </Card>
@@ -95,11 +81,11 @@ const Index = () => {
                 <div className="mx-auto w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                   <span className="text-3xl">✨</span>
                 </div>
-                <CardTitle className="text-xl">تجربة مستخدم</CardTitle>
+                <CardTitle className="text-xl">تصميم تجربة المستخدم</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  تصاميم سهلة الاستخدام وواضحة تسعد المستخدمين
+                  تصاميم سهلة الاستخدام وواضحة توفر تجربة مريحة وممتعة للمستخدمين
                 </p>
               </CardContent>
             </Card>
