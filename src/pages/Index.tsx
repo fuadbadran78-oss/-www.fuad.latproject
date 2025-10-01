@@ -101,6 +101,102 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Importance Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
+            لماذا تحتاج إلى موقع إلكتروني احترافي؟
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  1
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">الانطباع الأول يهم</h3>
+                  <p className="text-muted-foreground">
+                    94% من الانطباعات الأولى عن عملك تتعلق بتصميم موقعك. التصميم الاحترافي يبني الثقة ويعكس مصداقية علامتك التجارية من أول ثانية.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  2
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">تواجد رقمي قوي</h3>
+                  <p className="text-muted-foreground">
+                    في عصر الإنترنت، موقعك هو واجهتك الرقمية. أكثر من 80% من العملاء يبحثون عن الخدمات عبر الإنترنت قبل اتخاذ قرار الشراء.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  3
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">زيادة المبيعات</h3>
+                  <p className="text-muted-foreground">
+                    موقع ويب محسّن يعمل كمندوب مبيعات يعمل 24/7. التصميم الجيد يزيد من معدلات التحويل ويحول الزوار إلى عملاء فعليين.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  4
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">تجربة مستخدم متميزة</h3>
+                  <p className="text-muted-foreground">
+                    88% من المستخدمين لا يعودون لموقع بعد تجربة سيئة. التصميم الاحترافي يضمن تجربة سلسة تجعل العملاء يعودون مراراً.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  5
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">التفوق على المنافسين</h3>
+                  <p className="text-muted-foreground">
+                    موقع إلكتروني عصري ومتطور يميزك عن منافسيك. التصميم الاحترافي يظهر أنك جاد في عملك وملتزم بالجودة.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl">
+                  6
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">توفير الوقت والجهد</h3>
+                  <p className="text-muted-foreground">
+                    موقع منظم جيداً يوفر على عملائك الوقت في إيجاد المعلومات، وعليك الوقت في الرد على الأسئلة المتكررة.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center max-w-3xl mx-auto">
+            <div className="bg-accent/50 rounded-lg p-8">
+              <h3 className="text-2xl font-bold mb-4">الاستثمار في التصميم هو استثمار في نجاحك</h3>
+              <p className="text-lg text-muted-foreground">
+                موقع الويب ليس مجرد بطاقة عمل رقمية، بل هو أداة تسويقية قوية تعمل على مدار الساعة. التصميم الاحترافي يبني الثقة، يزيد المبيعات، ويوسع نطاق عملك ليصل إلى العالم بأسره.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
