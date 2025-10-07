@@ -1,12 +1,35 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 import heroImage from "@/assets/hero-web-design.jpg";
 import responsiveDesign from "@/assets/responsive-design.jpg";
 import uiuxDesign from "@/assets/uiux-design.jpg";
 import webDevelopment from "@/assets/web-development.jpg";
 
 const Index = () => {
+  const [content, setContent] = useState({
+    hero_title: "تصميم واجهات مستخدم احترافية",
+    hero_subtitle: "أصمم صفحات جذابة وسهلة الاستخدام تحول أفكارك إلى تجارب بصرية لا تُنسى",
+    cta_title: "جاهز لتصميم صفحتك؟",
+    cta_subtitle: "دعني أساعدك في تصميم صفحة احترافية تعكس هوية علامتك التجارية وتسعد مستخدميك",
+  });
+
+  useEffect(() => {
+    loadContent();
+  }, []);
+
+  const loadContent = async () => {
+    const { data } = await supabase.from("site_content").select("*");
+    if (data) {
+      const contentMap: Record<string, string> = {};
+      data.forEach((item) => {
+        contentMap[item.content_key] = item.content_value;
+      });
+      setContent((prev) => ({ ...prev, ...contentMap }));
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -38,10 +61,10 @@ const Index = () => {
         
         <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            تصميم واجهات مستخدم احترافية
+            {content.hero_title}
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            أصمم صفحات جذابة وسهلة الاستخدام تحول أفكارك إلى تجارب بصرية لا تُنسى
+            {content.hero_subtitle}
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
             ابدأ مشروعك الآن
@@ -210,10 +233,10 @@ const Index = () => {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            جاهز لتصميم صفحتك؟
+            {content.cta_title}
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            دعني أساعدك في تصميم صفحة احترافية تعكس هوية علامتك التجارية وتسعد مستخدميك
+            {content.cta_subtitle}
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
             تواصل معي الآن

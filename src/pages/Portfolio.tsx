@@ -1,68 +1,49 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
-// بيانات المشاريع - يمكنك تعديلها لاحقاً
-const projects = [
-  {
-    id: 1,
-    title: "منصة تجارة إلكترونية",
-    description: "متجر إلكتروني متكامل مع نظام دفع آمن وإدارة المنتجات",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop",
-    liveUrl: "https://example.lovable.app",
-    githubUrl: "https://github.com/username/project",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase"]
-  },
-  {
-    id: 2,
-    title: "لوحة تحكم تحليلات",
-    description: "Dashboard تحليلي متقدم لإدارة البيانات والإحصائيات",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
-    liveUrl: "https://example2.lovable.app",
-    githubUrl: "https://github.com/username/project2",
-    technologies: ["React", "Charts", "API Integration"]
-  },
-  {
-    id: 3,
-    title: "تطبيق حجوزات",
-    description: "نظام حجوزات ذكي للمواعيد والخدمات مع إشعارات تلقائية",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-    liveUrl: "https://example3.lovable.app",
-    githubUrl: "https://github.com/username/project3",
-    technologies: ["React", "Calendar", "Notifications"]
-  },
-  {
-    id: 4,
-    title: "موقع شركة ناشئة",
-    description: "موقع تعريفي حديث لشركة تقنية مع تصميم عصري وأنيميشن سلس",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop",
-    liveUrl: "https://example4.lovable.app",
-    githubUrl: "https://github.com/username/project4",
-    technologies: ["React", "Animations", "Responsive Design"]
-  },
-  {
-    id: 5,
-    title: "منصة تعليمية",
-    description: "نظام إدارة تعليمي مع كورسات تفاعلية ومتابعة التقدم",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=500&fit=crop",
-    liveUrl: "https://example5.lovable.app",
-    githubUrl: "https://github.com/username/project5",
-    technologies: ["React", "Video Player", "Progress Tracking"]
-  },
-  {
-    id: 6,
-    title: "تطبيق إدارة مهام",
-    description: "أداة إنتاجية لتنظيم المهام والمشاريع مع فريق العمل",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop",
-    liveUrl: "https://example6.lovable.app",
-    githubUrl: "https://github.com/username/project6",
-    technologies: ["React", "Drag & Drop", "Team Collaboration"]
-  }
-];
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  image_url: string;
+  live_url: string | null;
+  github_url: string | null;
+  technologies: string[];
+}
 
 const Portfolio = () => {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  const loadProjects = async () => {
+    const { data } = await supabase
+      .from("projects")
+      .select("*")
+      .eq("is_visible", true)
+      .order("display_order");
+    
+    if (data) {
+      setProjects(data);
+    }
+    setLoading(false);
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -111,31 +92,35 @@ const Portfolio = () => {
               >
                 <div className="relative overflow-hidden">
                   <img 
-                    src={project.image} 
+                    src={project.image_url} 
                     alt={project.title}
                     className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <Button 
-                      size="icon" 
-                      variant="secondary"
-                      className="rounded-full"
-                      asChild
-                    >
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button 
-                      size="icon" 
-                      variant="secondary"
-                      className="rounded-full"
-                      asChild
-                    >
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-5 w-5" />
-                      </a>
-                    </Button>
+                    {project.live_url && (
+                      <Button 
+                        size="icon" 
+                        variant="secondary"
+                        className="rounded-full"
+                        asChild
+                      >
+                        <a href={project.live_url} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-5 w-5" />
+                        </a>
+                      </Button>
+                    )}
+                    {project.github_url && (
+                      <Button 
+                        size="icon" 
+                        variant="secondary"
+                        className="rounded-full"
+                        asChild
+                      >
+                        <a href={project.github_url} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-5 w-5" />
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </div>
                 
@@ -157,12 +142,14 @@ const Portfolio = () => {
                 </CardContent>
                 
                 <CardFooter className="flex gap-2">
-                  <Button className="flex-1" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      عرض المشروع
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                    </a>
-                  </Button>
+                  {project.live_url && (
+                    <Button className="flex-1" asChild>
+                      <a href={project.live_url} target="_blank" rel="noopener noreferrer">
+                        عرض المشروع
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             ))}
