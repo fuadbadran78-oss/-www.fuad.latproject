@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-web-design.jpg";
 import responsiveDesign from "@/assets/responsive-design.jpg";
 import uiuxDesign from "@/assets/uiux-design.jpg";
@@ -8,6 +9,22 @@ import webDevelopment from "@/assets/web-development.jpg";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
+              تصميم احترافي
+            </Link>
+            <Link to="/portfolio">
+              <Button variant="outline">
+                معرض الأعمال
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
